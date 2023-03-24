@@ -1,77 +1,41 @@
-public class Plant {
-    private String name;
-    private String latinName;
-    private String oneYear;
-    private String growthRegion;
-    private int h;
-    private String edible;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-    public Plant() {
+public class Main {
 
-    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Plant> garden = new ArrayList<>();
 
-    public Plant(String name, String latinName, String oneYear, String growthRegion, int h, String edible) {
-        this.name = name;
-        this.latinName = latinName;
-        this.oneYear = oneYear;
-        this.growthRegion = growthRegion;
-        this.h = h;
-        this.edible = edible;
-    }
+        Plant a2 = new Plant();
+        a2.setName("Blakine kalendra");
+        a2.setLatinName("Coriandrum sativum");
+        a2.setOneYear("Vientmetis");
+        a2.setGrowthRegion("Europa");
+        a2.seth(1);
+        a2.setEdible("taip");
 
-    public String getName() {
-        return this.name;
-    }
+        garden.add(a2);
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        Plant b2 = new Plant();
+        b2.setName("Sosnovskio barštis");
+        b2.setLatinName("Heracleum sosnowskyi");
+        b2.setOneYear("Vientmetis");
+        b2.setGrowthRegion( "Europa" );
+        b2.seth(5);
+        b2.setEdible("Ne");
 
-    public String getLatinName() {
-        return this.latinName;
-    }
+        garden.add(b2);
 
-    public void setLatinName(String latinName) {
-        this.latinName = latinName;
-    }
+        garden.add(new Plant("bambukas", "Bambugu", "not one year", "Azija", 38, "ne"));
+        garden.add(new Plant("Šermukšnis", "Sorbus", " not one year", "Europa", 20, "ne"));
 
-    public String getOneYear(String oneYear) {
-        return this.oneYear;
-    }
+//        for (int i = 0; i < garden.size(); i++) {
+//            System.out.println(garden.get(i));
+//        }
+        while(true){
+            Plant.info();
 
-    public void setOneYear(String oneYear) {
-        this.oneYear = oneYear;
-    }
-
-    public String getGrowthregion(String growthRegion) {
-        return this.growthRegion;
-    }
-
-    public void setGrowthRegion(String growthRegion) {
-        this.growthRegion = growthRegion;
-    }
-
-    public int getH(int h) {
-        return this.h;
-    }
-
-    public void seth(int h) {
-        this.h = h;
-    }
-
-    public String getEdible(String edible) {
-        return this.edible;
-    }
-
-    public void setEdible(String edible) {
-        this.edible = edible;
-    }
-
-    @Override
-    public String toString() {
-        return ("Augalo pavadinimas: " + name + ", lotyniskas pavadinimas: "+ latinName + ", vienmetis ar nevienmetis: " +
-                oneYear + ", aukstis metrais: " + h + ", ar valgomas? " + edible);
-
-
+        }
     }
 }
